@@ -20,6 +20,10 @@
     }
   },
   "android": {
-    "allowMixedContent": true
+    "allowMixedContent": true,
+    "buildOptions": {
+      "keystorePath": null,
+      "releaseType": "AAB"
+    }
   }
 }
