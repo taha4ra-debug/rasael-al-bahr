@@ -4,14 +4,22 @@
   "webDir": "www",
   "server": {
     "url": "https://www.bayannet.net/p/rasael-al-bahr.html",
-    "allowNavigation": ["www.bayannet.net"]
+    "cleartext": true,
+    "allowNavigation": [
+      "www.bayannet.net",
+      "bayannet.net",
+      "*.bayannet.net"
+    ]
   },
   "plugins": {
     "SplashScreen": {
-      "launchShowDuration": 2000,
-      "backgroundColor": "#0f172a",
+      "launchShowDuration": 2500,
+      "backgroundColor": "#0b132b",
       "androidScaleType": "CENTER_CROP",
       "showSpinner": false
     }
+  },
+  "android": {
+    "allowMixedContent": true
   }
 }
