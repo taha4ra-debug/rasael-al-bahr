@@ -11,19 +11,8 @@
       "*.bayannet.net"
     ]
   },
-  "plugins": {
-    "SplashScreen": {
-      "launchShowDuration": 2500,
-      "backgroundColor": "#0b132b",
-      "androidScaleType": "CENTER_CROP",
-      "showSpinner": false
-    }
-  },
   "android": {
     "allowMixedContent": true,
-    "buildOptions": {
-      "keystorePath": null,
-      "releaseType": "AAB"
-    }
+    "webContentsDebuggingEnabled": false
   }
 }
