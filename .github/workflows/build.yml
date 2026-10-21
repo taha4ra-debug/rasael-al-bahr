@@ -28,9 +28,17 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Add Android Platform & Sync
+      - name: Add Android Platform
         run: |
           npx cap add android
+
+      - name: Generate App Icons and Splash
+        run: |
+          npm install -D @capacitor/assets
+          npx capacitor-assets generate --android --iconOnly --splashOnly --assetPath .github/workflows
+
+      - name: Sync Android Platform
+        run: |
           npx cap sync android
 
       - name: Build APK
