@@ -5,5 +5,13 @@
   "server": {
     "url": "https://www.bayannet.net/p/rasael-al-bahr.html",
     "allowNavigation": ["www.bayannet.net"]
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#0f172a",
+      "androidScaleType": "CENTER_CROP",
+      "showSpinner": false
+    }
   }
 }
