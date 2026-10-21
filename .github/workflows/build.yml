@@ -31,10 +31,10 @@ jobs:
       - name: Add Android Platform
         run: npx cap add android
 
-      - name: Generate Assets and Sync
+      - name: Generate Assets from WebP and Sync
         run: |
           npm install -D @capacitor/assets
-          npx capacitor-assets generate --android
+          npx capacitor-assets generate --android --iconBackgroundColor '#0b132b' --splashBackgroundColor '#0b132b'
           npx cap sync android
 
       - name: Build APK
