@@ -1,4 +1,4 @@
-name: Build Signed Release (APK & AAB)
+name: Build Direct Signed APK
 
 on:
   push:
@@ -37,30 +37,14 @@ jobs:
           npx capacitor-assets generate --android
           npx cap sync android
 
-      - name: Build Unsigned Release
+      - name: Build Debug APK (Direct Install)
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleRelease bundleRelease
+          ./gradlew assembleDebug
 
-      - name: Sign Release APK
-        run: |
-          ${JAVA_HOME}/bin/jarsigner -verbose \
-            -sigalg SHA256withRSA \
-            -digestalg SHA-256 \
-            -keystore bayannet.keystore \
-            -storepass "63845800aA++" \
-            -keypass "63845800aA++" \
-            android/app/build/outputs/apk/release/app-release-unsigned.apk bayannet-key
-
-      - name: Upload Signed Release APK
+      - name: Upload Direct APK
         uses: actions/upload-artifact@v4
         with:
-          name: rasael-al-bahr-signed-apk
-          path: android/app/build/outputs/apk/release/app-release-unsigned.apk
-
-      - name: Upload Release AAB (For Google Play)
-        uses: actions/upload-artifact@v4
-        with:
-          name: rasael-al-bahr-google-play-aab
-          path: android/app/build/outputs/bundle/release/app-release.aab
+          name: rasael-al-bahr-direct
+          path: android/app/build/outputs/apk/debug/app-debug.apk
