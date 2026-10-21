@@ -1,0 +1,9 @@
+{
+  "appId": "com.bayannet.rasaelalbahr",
+  "appName": "رسائل البحر",
+  "webDir": "www",
+  "server": {
+    "url": "https://www.bayannet.net/p/rasael-al-bahr.html",
+    "allowNavigation": ["www.bayannet.net"]
+  }
+}
